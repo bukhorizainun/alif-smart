@@ -1,0 +1,114 @@
+/* ============================================
+   ALIF SMART — Base
+   Reset, typography, container, buttons
+   ============================================ */
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink-900);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--emerald-700); text-decoration: none; }
+a:hover { color: var(--emerald-800); }
+
+h1, h2, h3 { font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; margin: 0 0 .6rem; }
+h1 { font-size: clamp(2rem, 6vw, 3.25rem); font-weight: 800; }
+h2 { font-size: clamp(1.5rem, 4.2vw, 2.25rem); }
+h3 { font-size: 1.125rem; }
+p  { margin: 0 0 1rem; color: var(--ink-700); }
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section {
+  padding: 3rem 0;
+}
+.section-soft {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.section-head {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 2rem;
+}
+.section-head p {
+  color: var(--ink-500);
+  font-size: 1rem;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .85rem 1.4rem;
+  font-weight: 600;
+  font-size: .95rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  cursor: pointer;
+  min-height: var(--tap-target);
+}
+.btn-primary {
+  background: var(--emerald-700);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(4, 120, 87, 0.28);
+}
+.btn-primary:hover {
+  background: var(--emerald-800);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.btn-ghost {
+  background: #fff;
+  color: var(--emerald-800);
+  border-color: var(--line);
+}
+.btn-ghost:hover {
+  border-color: var(--emerald-500);
+  color: var(--emerald-800);
+}
+
+/* Container & section responsive */
+@media (max-width: 640px) {
+  .container { padding: 0 1rem; }
+  .section { padding: 2.25rem 0; }
+  .section-head { margin-bottom: 1.5rem; }
+  .section-head p { font-size: .92rem; }
+}
+@media (max-width: 480px) {
+  :root { --container: 100%; }
+  .container { padding: 0 .9rem; }
+  .btn { font-size: .92rem; padding: .8rem 1.1rem; }
+  h2 { font-size: 1.35rem; }
+}
+@media (min-width: 860px) {
+  .section { padding: 4.5rem 0; }
+}
+@media (min-width: 1024px) {
+  h1 { font-size: 3.25rem; }
+}

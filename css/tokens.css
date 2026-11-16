@@ -1,0 +1,43 @@
+/* ============================================
+   ALIF SMART — Design Tokens
+   Palette: Emerald, White, Soft Gold
+   ============================================ */
+
+:root {
+  --emerald-50:  #ecfdf5;
+  --emerald-100: #d1fae5;
+  --emerald-500: #10b981;
+  --emerald-600: #059669;
+  --emerald-700: #047857;
+  --emerald-800: #065f46;
+  --emerald-900: #064e3b;
+
+  --gold-100: #fef6e0;
+  --gold-300: #f3d68a;
+  --gold-500: #d4a23a;
+  --gold-600: #b8861f;
+
+  --ink-900: #0b1f1a;
+  --ink-700: #2a3b36;
+  --ink-500: #5b6b66;
+  --ink-300: #a6b1ad;
+
+  --bg:      #ffffff;
+  --bg-soft: #f7faf8;
+  --line:    #e7efeb;
+
+  --radius-sm: 10px;
+  --radius:    16px;
+  --radius-lg: 24px;
+
+  --shadow-sm: 0 1px 2px rgba(6, 78, 59, 0.06);
+  --shadow:    0 8px 24px rgba(6, 78, 59, 0.08);
+  --shadow-lg: 0 20px 40px rgba(6, 78, 59, 0.12);
+
+  --container: 1120px;
+
+  --font: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Mobile tap-target minimum per WCAG 2.2 AAA */
+  --tap-target: 44px;
+}

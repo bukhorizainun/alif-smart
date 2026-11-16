@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#047857" />
+  <meta name="description" content="Formulir pendaftaran santri baru LPQ Alif Lam Mim — TKQ, TPQ, dan MDTA. Daftar online cepat dan mudah." />
+
+  <title>Pendaftaran Santri — ALIF SMART</title>
+
+  <link rel="icon" type="image/png" href="assets/img/logo_alif_lam_mim.png" />
+  <link rel="apple-touch-icon" href="assets/img/logo_alif_lam_mim.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="ALIF SMART" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages/form.css" />
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/img/logo_alif_lam_mim.png" alt="Logo Alif Lam Mim" class="brand-logo" width="46" height="46" />
+        <span class="brand-text">
+          <span class="brand-name">ALIF SMART</span>
+          <span class="brand-sub">LPQ Alif Lam Mim</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="siteNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Navigasi utama">
+        <a href="index.html#beranda">Beranda</a>
+        <a href="index.html#program">Program</a>
+        <a href="index.html#fitur">Fitur</a>
+        <a href="index.html#tentang">Tentang</a>
+        <a href="dashboard.html">Dasbor</a>
+        <a href="pendaftaran-santri.html" class="nav-cta" aria-current="page">Daftar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb">
+          <a href="index.html">Beranda</a> &rsaquo; Pendaftaran Santri
+        </p>
+        <h1>Pendaftaran Santri Baru</h1>
+        <p>Lengkapi formulir berikut untuk mendaftarkan putra/putri Anda di LPQ Alif Lam Mim. Pastikan data yang diisi sesuai dengan dokumen resmi.</p>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="form-shell">
+      <div class="container form-grid">
+
+        <!-- FORM CARD -->
+        <div class="form-card">
+
+          <!-- SUCCESS STATE -->
+          <div class="form-success" id="formSuccess" aria-live="polite">
+            <div class="check-circle" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h2>Pendaftaran Terkirim!</h2>
+            <p>Terima kasih, formulir pendaftaran sudah kami terima. Admin LPQ akan menghubungi Anda dalam 1&ndash;3 hari kerja.</p>
+            <a href="index.html" class="btn btn-primary">Kembali ke Beranda</a>
+          </div>
+
+          <!-- ERROR BANNER (hidden by default) -->
+          <div id="formError" class="alert error" role="alert" aria-live="assertive"></div>
+
+          <!-- FORM -->
+          <form id="formDaftar" novalidate enctype="multipart/form-data">
+
+            <!-- SECTION 1: DATA SANTRI -->
+            <div class="form-section">
+              <header>
+                <h2><span class="step-num">1</span> Data Santri</h2>
+                <p class="section-desc">Identitas calon santri sesuai akta kelahiran.</p>
+              </header>
+
+              <div class="form-row cols-2">
+                <div class="form-field">
+                  <label for="nama">Nama Lengkap <span class="req">*</span></label>
+                  <input type="text" id="nama" name="nama" placeholder="Contoh: Muhammad Abdullah" autocomplete="name" required />
+                </div>
+                <div class="form-field">
+                  <label for="panggilan">Nama Panggilan</label>
+                  <input type="text" id="panggilan" name="panggilan" placeholder="Contoh: Abdullah" />
+                </div>
+              </div>
+
+              <div class="form-row cols-2">
+                <div class="form-field">
+                  <label for="nik">NIK</label>
+                  <input type="text" id="nik" name="nik" placeholder="16 digit NIK" inputmode="numeric" pattern="[0-9]{16}" maxlength="16" />
+                  <span class="hint">Opsional, dapat diisi menyusul.</span>
+                </div>
+                <div class="form-field">
+                  <label for="tanggal_lahir">Tanggal Lahir <span class="req">*</span></label>
+                  <input type="date" id="tanggal_lahir" name="tanggal_lahir" required />
+                </div>
+              </div>
+
+              <div class="form-row cols-2">
+                <div class="form-field">
+                  <label for="tempat_lahir">Tempat Lahir <span class="req">*</span></label>
+                  <input type="text" id="tempat_lahir" name="tempat_lahir" placeholder="Contoh: Bandung" required />
+                </div>
+                <div class="form-field">
+                  <label>Jenis Kelamin <span class="req">*</span></label>
+                  <div class="choice-group" role="radiogroup" aria-label="Jenis kelamin">
+                    <label class="choice">
+                      <input type="radio" name="jk" value="L" required />
+                      <span>Laki-laki</span>
+                    </label>
+                    <label class="choice">
+                      <input type="radio" name="jk" value="P" />
+                      <span>Perempuan</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="alamat">Alamat Lengkap <span class="req">*</span></label>
+                  <textarea id="alamat" name="alamat" placeholder="Jalan, RT/RW, kelurahan, kecamatan, kota" autocomplete="street-address" required></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 2: PROGRAM -->
+            <div class="form-section">
+              <header>
+                <h2><span class="step-num">2</span> Pilih Program</h2>
+                <p class="section-desc">Jenjang yang akan diikuti calon santri.</p>
+              </header>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label>Jenjang Pendidikan <span class="req">*</span></label>
+                  <div class="choice-group" role="radiogroup" aria-label="Jenjang pendidikan">
+                    <label class="choice">
+                      <input type="radio" name="jenjang" value="TKQ" required />
+                      <span>TKQ</span>
+                    </label>
+                    <label class="choice">
+                      <input type="radio" name="jenjang" value="TPQ" />
+                      <span>TPQ</span>
+                    </label>
+                    <label class="choice">
+                      <input type="radio" name="jenjang" value="MDTA" />
+                      <span>MDTA</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row cols-2">
+                <div class="form-field">
+                  <label for="kemampuan">Kemampuan Baca Al-Qur'an Saat Ini</label>
+                  <select id="kemampuan" name="kemampuan">
+                    <option value="">&mdash; Pilih &mdash;</option>
+                    <option value="belum_hijaiyah">Belum mengenal huruf hijaiyah</option>
+                    <option value="sudah_hijaiyah">Sudah mengenal huruf hijaiyah</option>
+                    <option value="iqro_1_2">Iqro 1&ndash;2</option>
+                    <option value="iqro_3_4">Iqro 3&ndash;4</option>
+                    <option value="iqro_5_6">Iqro 5&ndash;6</option>
+                    <option value="al_quran">Sudah Al-Qur'an</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="sekolah">Sekolah Formal Saat Ini</label>
+                  <input type="text" id="sekolah" name="sekolah" placeholder="Nama sekolah & kelas" />
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 3: DATA ORANG TUA -->
+            <div class="form-section">
+              <header>
+                <h2><span class="step-num">3</span> Data Orang Tua / Wali</h2>
+                <p class="section-desc">Untuk komunikasi resmi dari LPQ.</p>
+              </header>
+
+              <div class="form-row cols-2">
+                <div class="form-field">
+                  <label for="ayah">Nama Ayah <span class="req">*</span></label>
+                  <input type="text" id="ayah" name="ayah" placeholder="Nama lengkap ayah" required />
+                </div>
+                <div class="form-field">
+                  <label for="ibu">Nama Ibu <span class="req">*</span></label>
+                  <input type="text" id="ibu" name="ibu" placeholder="Nama lengkap ibu" required />
+                </div>
+              </div>
+
+              <div class="form-row cols-2">
+                <div class="form-field">
+                  <label for="pekerjaan">Pekerjaan Orang Tua / Wali</label>
+                  <input type="text" id="pekerjaan" name="pekerjaan" placeholder="Contoh: Wiraswasta" />
+                </div>
+                <div class="form-field">
+                  <label for="hp">No. HP / WhatsApp Aktif <span class="req">*</span></label>
+                  <input type="tel" id="hp" name="hp" placeholder="08xxxxxxxxxx" inputmode="tel" autocomplete="tel" required />
+                </div>
+              </div>
+
+              <div class="form-row cols-2">
+                <div class="form-field">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="nama@email.com" autocomplete="email" />
+                </div>
+                <div class="form-field">
+                  <label for="hubungan">Hubungan Pendaftar dengan Santri</label>
+                  <select id="hubungan" name="hubungan">
+                    <option value="">&mdash; Pilih &mdash;</option>
+                    <option value="ayah">Ayah</option>
+                    <option value="ibu">Ibu</option>
+                    <option value="wali">Wali</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 4: DOKUMEN PENDUKUNG -->
+            <div class="form-section">
+              <header>
+                <h2><span class="step-num">4</span> Dokumen Pendukung</h2>
+                <p class="section-desc">Opsional saat daftar online &mdash; bisa menyusul saat daftar ulang. Format: JPG, PNG, atau PDF. Maks 5 MB per file.</p>
+              </header>
+
+              <div class="form-row cols-2">
+                <div class="form-field">
+                  <label for="foto_santri">Foto Santri</label>
+                  <label class="file-drop" for="foto_santri" tabindex="0" role="button" aria-label="Pilih foto santri">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m3 17 4-4 5 5 3-3 6 5"/></svg>
+                    <strong>Tap untuk pilih foto</strong>
+                    <span class="file-hint">atau drop file di sini</span>
+                    <input type="file" id="foto_santri" name="foto_santri" accept="image/jpeg,image/png" />
+                  </label>
+                  <ul class="file-list" aria-live="polite"></ul>
+                </div>
+                <div class="form-field">
+                  <label for="dokumen">Kartu Keluarga / Akta Kelahiran</label>
+                  <label class="file-drop" for="dokumen" tabindex="0" role="button" aria-label="Pilih dokumen pendukung">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="m9 15 3-3 3 3"/></svg>
+                    <strong>Tap untuk pilih file</strong>
+                    <span class="file-hint">KK + akta (boleh banyak file)</span>
+                    <input type="file" id="dokumen" name="dokumen" accept="image/jpeg,image/png,application/pdf" multiple />
+                  </label>
+                  <ul class="file-list" aria-live="polite"></ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 5: PERSETUJUAN -->
+            <div class="form-section">
+              <header>
+                <h2><span class="step-num">5</span> Persetujuan</h2>
+                <p class="section-desc">Konfirmasi sebelum mengirim formulir.</p>
+              </header>
+
+              <div class="form-row">
+                <label class="check">
+                  <input type="checkbox" id="setuju" name="setuju" required />
+                  <span>Saya menyatakan bahwa data yang saya isi adalah benar dan saya menyetujui ketentuan pendidikan di LPQ Alif Lam Mim.</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- ACTIONS -->
+            <div class="form-actions">
+              <a href="index.html" class="btn btn-ghost">Batal</a>
+              <button type="submit" class="btn btn-primary">Kirim Pendaftaran</button>
+            </div>
+          </form>
+
+        </div>
+
+        <!-- SIDEBAR INFO -->
+        <aside class="info-aside" aria-label="Informasi pendaftaran">
+          <h3>Informasi Pendaftaran</h3>
+          <p>Setelah formulir terkirim, admin LPQ akan menghubungi Anda untuk verifikasi data dan jadwal kunjungan.</p>
+
+          <ul class="info-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Pendaftaran gratis, tanpa biaya administrasi.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Data aman, hanya digunakan untuk keperluan LPQ.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Verifikasi 1&ndash;3 hari kerja via WhatsApp.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Dokumen pendukung dapat menyusul saat daftar ulang.</span>
+            </li>
+          </ul>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="foot-brand">
+        <img src="assets/img/logo_alif_lam_mim.png" alt="Logo Alif Lam Mim" width="44" height="44" />
+        <div>
+          <strong>ALIF SMART</strong>
+          <span>Platform digital LPQ Alif Lam Mim</span>
+        </div>
+      </div>
+      <nav class="foot-nav" aria-label="Navigasi footer">
+        <a href="index.html#program">Program</a>
+        <a href="index.html#fitur">Fitur</a>
+        <a href="index.html#tentang">Tentang</a>
+        <a href="pendaftaran-santri.html">Daftar</a>
+      </nav>
+      <p class="copyright">&copy; <span id="year"></span> LPQ Alif Lam Mim. Semua hak dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- Supabase config (gitignored, copy from supabase-config.example.js) -->
+  <script src="js/supabase-config.js" onerror="window._noSupabaseConfig=true"></script>
+  <script type="module" src="js/core.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/form.js"></script>
+</body>
+</html>

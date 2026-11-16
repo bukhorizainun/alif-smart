@@ -1,0 +1,123 @@
+/* ============================================
+   ALIF SMART — App shell (login + dashboard)
+   Mobile-first. Mirrors the 2026-11 redesign canvas.
+   ============================================ */
+
+:root {
+  --a-ground: #0F4C3A;
+  --a-ground-dark: #0A3328;
+  --a-paper: #F6F4EE;
+  --a-card: #FFFFFF;
+  --a-ink: #0B1F1A;
+  --a-muted: #55635E;
+  --a-line: #E7EBE9;
+  --a-line-strong: #D9DFDC;
+  --a-mint: #EEF5F1;
+  --a-mint-2: #E3F0EA;
+  --a-gold: #F3D68A;
+  --a-gold-soft: #FBF3DC;
+  --a-gold-ink: #3D2C05;
+  --a-gold-ink-2: #5A410B;
+  --a-blue: #2D3A73;
+  --a-blue-soft: #E6E9F4;
+  --a-amber: #8A5A08;
+  --a-red: #8A2A1F;
+  --a-red-soft: #F9E7E3;
+  --a-radius: 20px;
+  --a-shadow: 0 10px 28px rgba(15, 76, 58, 0.10);
+  --a-font: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+.app-body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--a-paper);
+  color: var(--a-ink);
+  font-family: var(--a-font);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.app-body a { color: var(--a-ground); }
+.app-body a:hover { color: var(--a-ground-dark); }
+.app-body h1, .app-body h2, .app-body h3, .app-body p { margin: 0; }
+
+.muted { color: var(--a-muted); }
+.small { font-size: 0.8rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+:focus-visible { outline: 3px solid #D4A23A; outline-offset: 2px; }
+
+/* ---------- Buttons ---------- */
+.btn-primary, .btn-outline, .btn-gold, .btn-danger, .btn-ghost {
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 14px;
+  font: 700 0.95rem/1 var(--a-font);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition: transform 0.12s ease, background-color 0.15s ease, opacity 0.15s ease;
+}
+.btn-primary:active, .btn-outline:active, .btn-gold:active, .btn-danger:active { transform: scale(0.98); }
+.btn-primary { background: var(--a-ground); color: #fff; }
+.app-body a.btn-primary, .app-body a.btn-primary:hover { color: #fff; }
+.btn-primary:hover { background: var(--a-ground-dark); }
+.btn-outline { background: var(--a-card); color: var(--a-ink); border: 1.5px solid var(--a-line-strong); }
+.btn-gold { background: var(--a-gold); color: var(--a-gold-ink); }
+.app-body a.btn-gold, .app-body a.btn-gold:hover { color: var(--a-gold-ink); }
+.btn-danger { background: var(--a-card); color: var(--a-red); border: 1.5px solid var(--a-line-strong); }
+.btn-ghost { background: transparent; color: var(--a-ground); border: 1px solid #C9D6D0; min-height: 38px; font-size: 0.82rem; }
+button:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn-block { width: 100%; }
+
+/* ---------- Alerts ---------- */
+.alert { display: none; padding: 12px 14px; border-radius: 14px; font-size: 0.88rem; }
+.alert.show { display: block; }
+.alert.error { background: var(--a-red-soft); color: var(--a-red); }
+.alert.success { background: var(--a-mint-2); color: var(--a-ground); }
+.alert.info { background: var(--a-gold-soft); color: var(--a-gold-ink-2); }
+
+/* ---------- Inputs ---------- */
+.app-body input, .app-body select, .app-body textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1.5px solid var(--a-line-strong);
+  background: var(--a-card);
+  font: 400 16px/1.4 var(--a-font); /* 16px stops iOS zoom */
+  color: var(--a-ink);
+}
+.app-body textarea { padding: 12px 14px; min-height: 96px; resize: vertical; }
+.app-body label { font-size: 0.82rem; font-weight: 700; display: block; margin: 10px 0 6px; }
+.app-body input:focus, .app-body select:focus, .app-body textarea:focus { border-color: var(--a-ground); outline: none; box-shadow: 0 0 0 3px rgba(15, 76, 58, 0.15); }
+
+/* ---------- Toast ---------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(92px + env(safe-area-inset-bottom));
+  transform: translate(-50%, 20px);
+  background: var(--a-ink);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 50;
+  max-width: calc(100vw - 32px);
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

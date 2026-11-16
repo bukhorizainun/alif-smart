@@ -1,0 +1,28 @@
+{
+  "name": "ALIF SMART — LPQ Alif Lam Mim",
+  "short_name": "ALIF SMART",
+  "description": "Platform digital LPQ Alif Lam Mim untuk TKQ, TPQ, dan MDTA.",
+  "lang": "id",
+  "dir": "ltr",
+  "start_url": "./dashboard.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0F4C3A",
+  "background_color": "#ffffff",
+  "categories": ["education"],
+  "icons": [
+    {
+      "src": "assets/img/logo_alif_lam_mim.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/logo_alif_lam_mim.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

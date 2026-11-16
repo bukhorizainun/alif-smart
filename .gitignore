@@ -1,0 +1,44 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Tool caches (jika nantinya ada build step)
+node_modules/
+.cache/
+dist/
+.parcel-cache/
+.next/
+.astro/
+.svelte-kit/
+
+# Env files (untuk Phase 7 backend)
+.env
+.env.local
+.env.*.local
+
+# js/supabase-config.js IKUT dipublikasikan: hanya berisi URL + publishable key,
+# yang memang publik. Keamanan data dijaga RLS. JANGAN taruh secret/service key di sana.
+
+# Catatan pribadi (menyebut potongan secret key lama)
+lanjutan dan error.txt
+
+# Supabase CLI local artifacts
+supabase/.branches/
+supabase/.temp/
+
+# Claude/gstack session artifacts (jangan commit ke repo project)
+.claude/
+.gstack/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

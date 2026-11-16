@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#047857" />
+  <meta name="description" content="ALIF SMART — Platform digital LPQ Alif Lam Mim untuk TKQ, TPQ, dan MDTA. Pendaftaran online, absensi, materi belajar, progress Iqro & hafalan, pembayaran SPP." />
+
+  <title>ALIF SMART — Platform Digital LPQ Alif Lam Mim</title>
+
+  <link rel="icon" type="image/png" href="assets/img/logo_alif_lam_mim.png" />
+  <link rel="apple-touch-icon" href="assets/img/logo_alif_lam_mim.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="ALIF SMART" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages/landing.css" />
+
+  <script>
+    // Hide reveal-group children before first paint (no FOUC).
+    // Only when JS + IntersectionObserver are available; otherwise content
+    // stays visible as a graceful fallback.
+    if ('IntersectionObserver' in window) {
+      document.documentElement.classList.add('reveal-ready');
+    }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#beranda" class="brand" aria-current="page">
+        <img src="assets/img/logo_alif_lam_mim.png" alt="Logo Alif Lam Mim" class="brand-logo" width="46" height="46" />
+        <span class="brand-text">
+          <span class="brand-name">ALIF SMART</span>
+          <span class="brand-sub">LPQ Alif Lam Mim</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="siteNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Navigasi utama">
+        <a href="#beranda" aria-current="page">Beranda</a>
+        <a href="#program">Program</a>
+        <a href="#fitur">Fitur</a>
+        <a href="#tentang">Tentang</a>
+        <a href="dashboard.html">Dasbor</a>
+        <a href="pendaftaran-santri.html" class="nav-cta">Daftar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="beranda">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <span class="pill">Platform Digital Pendidikan Al-Qur'an</span>
+          <h1>
+            Belajar Al-Qur'an Lebih <span class="accent">Mudah</span>,
+            Lebih <span class="accent">Terarah</span>.
+          </h1>
+          <p class="lead">
+            ALIF SMART adalah platform digital untuk TKQ, TPQ, dan MDTA
+            di lingkungan LPQ Alif Lam Mim — menghubungkan santri, guru,
+            dan orang tua dalam satu sistem yang sederhana.
+          </p>
+          <div class="hero-cta">
+            <a href="pendaftaran-santri.html" class="btn btn-primary">Daftar Santri</a>
+            <a href="#fitur" class="btn btn-ghost">Lihat Fitur</a>
+          </div>
+          <ul class="hero-stats">
+            <li><strong>3</strong><span>Jenjang Program</span></li>
+            <li><strong>8</strong><span>Fitur Utama</span></li>
+            <li><strong>24/7</strong><span>Akses Online</span></li>
+          </ul>
+        </div>
+        <div class="hero-visual">
+          <div class="logo-frame">
+            <img src="assets/img/logo_alif_lam_mim.png" alt="Logo LPQ Alif Lam Mim" width="360" height="360" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAM -->
+    <section class="section" id="program">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Program</span>
+          <h2>Untuk Tiga Jenjang Pendidikan</h2>
+          <p>ALIF SMART mendampingi santri sejak usia dini hingga pendalaman ilmu agama.</p>
+        </header>
+
+        <div class="grid grid-3 reveal-group">
+          <article class="card jenjang">
+            <div class="badge">TKQ</div>
+            <h3>Taman Kanak-Kanak Al-Qur'an</h3>
+            <p>Pengenalan huruf hijaiyah, doa harian, dan akhlak Islami untuk usia dini.</p>
+          </article>
+
+          <article class="card jenjang">
+            <div class="badge">TPQ</div>
+            <h3>Taman Pendidikan Al-Qur'an</h3>
+            <p>Pembelajaran Iqro, tahsin bacaan, hafalan surat pendek, dan praktek ibadah.</p>
+          </article>
+
+          <article class="card jenjang">
+            <div class="badge">MDTA</div>
+            <h3>Madrasah Diniyah Takmiliyah Awaliyah</h3>
+            <p>Pendalaman fiqh, akidah akhlak, tarikh, bahasa Arab, dan Al-Qur'an Hadits.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FITUR -->
+    <section class="section section-soft" id="fitur">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Fitur</span>
+          <h2>Satu Platform, Semua Kebutuhan LPQ</h2>
+          <p>Dirancang agar mudah digunakan oleh admin, guru, santri, dan orang tua — langsung dari HP.</p>
+        </header>
+
+        <div class="grid grid-4 reveal-group">
+          <article class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+            </div>
+            <h3>Pendaftaran Santri Online</h3>
+            <p>Calon santri mendaftar langsung dari rumah, data tersimpan rapi.</p>
+          </article>
+
+          <article class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+            </div>
+            <h3>Dasbor Admin</h3>
+            <p>Ringkasan santri, kelas, keuangan, dan aktivitas LPQ dalam satu layar.</p>
+          </article>
+
+          <article class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <h3>Absensi Guru & Santri</h3>
+            <p>Check-in harian dengan rekap otomatis per kelas dan per periode.</p>
+          </article>
+
+          <article class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <h3>Materi Belajar</h3>
+            <p>Modul TKQ, TPQ, dan MDTA terorganisir per jenjang dan tingkat.</p>
+          </article>
+
+          <article class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-6"/></svg>
+            </div>
+            <h3>Progress Iqro & Hafalan</h3>
+            <p>Pantau capaian Iqro, tahsin, dan hafalan santri secara real-time.</p>
+          </article>
+
+          <article class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-3 18-6-6-9-4z"/><path d="M12 15l3-3"/></svg>
+            </div>
+            <h3>Pengumuman</h3>
+            <p>Informasi resmi dari LPQ langsung sampai ke orang tua dan santri.</p>
+          </article>
+
+          <article class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 11h20"/><path d="M6 15h4"/></svg>
+            </div>
+            <h3>Pembayaran SPP & Komite</h3>
+            <p>Tagihan jelas, riwayat tersimpan, dan bukti pembayaran digital.</p>
+          </article>
+
+          <article class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h6"/></svg>
+            </div>
+            <h3>Laporan Perkembangan</h3>
+            <p>Rapor digital santri yang dapat diakses orang tua kapan saja.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TENTANG -->
+    <section class="section" id="tentang">
+      <div class="container about-grid">
+        <div class="about-text">
+          <span class="eyebrow">Tentang</span>
+          <h2>Membangun Generasi Qur'ani dengan Sentuhan Digital</h2>
+          <p>
+            ALIF SMART hadir untuk membantu pengelolaan Lembaga Pendidikan Al-Qur'an
+            Alif Lam Mim agar lebih tertata, transparan, dan dekat dengan orang tua santri.
+          </p>
+          <p>
+            Dari pendaftaran, absensi, materi, hingga laporan perkembangan —
+            semuanya dalam satu aplikasi yang nyaman diakses dari HP.
+          </p>
+          <ul class="check-list">
+            <li>Antarmuka sederhana, ramah untuk semua usia</li>
+            <li>Data santri aman &amp; terpusat</li>
+            <li>Mendukung kerja guru dan komunikasi orang tua</li>
+          </ul>
+        </div>
+
+        <aside class="about-card">
+          <h3>Visi Singkat</h3>
+          <p class="visi">
+            "Menjadi platform pendukung pendidikan Al-Qur'an yang
+            <em>amanah, modern, dan memudahkan</em>."
+          </p>
+          <div class="about-foot">
+            <img src="assets/img/logo_alif_lam_mim.png" alt="Logo Alif Lam Mim" width="44" height="44" />
+            <div>
+              <strong>LPQ Alif Lam Mim</strong>
+              <span>Lembaga Pendidikan Al-Qur'an</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="daftar">
+      <div class="container cta-inner">
+        <h2>Siap Bergabung dengan ALIF SMART?</h2>
+        <p>Daftarkan putra-putri Anda sekarang dan nikmati pengalaman belajar Al-Qur'an yang lebih terstruktur.</p>
+        <div class="hero-cta">
+          <a href="pendaftaran-santri.html" class="btn btn-primary">Daftar Santri Baru</a>
+          <a href="dashboard.html" class="btn btn-ghost">Lihat Dasbor</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="foot-brand">
+        <img src="assets/img/logo_alif_lam_mim.png" alt="Logo Alif Lam Mim" width="44" height="44" />
+        <div>
+          <strong>ALIF SMART</strong>
+          <span>Platform digital LPQ Alif Lam Mim</span>
+        </div>
+      </div>
+      <nav class="foot-nav" aria-label="Navigasi footer">
+        <a href="#program">Program</a>
+        <a href="#fitur">Fitur</a>
+        <a href="#tentang">Tentang</a>
+        <a href="pendaftaran-santri.html">Daftar</a>
+      </nav>
+      <p class="copyright">&copy; <span id="year"></span> LPQ Alif Lam Mim. Semua hak dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- Supabase config (gitignored, copy from supabase-config.example.js) -->
+  <script src="js/supabase-config.js" onerror="window._noSupabaseConfig=true"></script>
+  <script type="module" src="js/core.js"></script>
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>

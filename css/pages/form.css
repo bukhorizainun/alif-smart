@@ -1,0 +1,393 @@
+/* ============================================
+   ALIF SMART — Form page (Pendaftaran Santri)
+   ============================================ */
+
+.page-hero {
+  position: relative;
+  padding: 2.5rem 0 2rem;
+  background:
+    radial-gradient(60% 70% at 15% 20%, rgba(16, 185, 129, 0.10), transparent 70%),
+    radial-gradient(50% 60% at 90% 0%, rgba(212, 162, 58, 0.10), transparent 70%),
+    var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.page-hero .breadcrumb {
+  font-size: .82rem;
+  color: var(--ink-500);
+  margin-bottom: .75rem;
+}
+.page-hero .breadcrumb a { color: var(--emerald-700); font-weight: 500; }
+.page-hero h1 {
+  font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+  margin-bottom: .5rem;
+  color: var(--emerald-900);
+}
+.page-hero p { max-width: 56ch; color: var(--ink-500); }
+
+.form-shell {
+  padding: 2.5rem 0 3.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.form-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-section + .form-section {
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px dashed var(--line);
+}
+.form-section header { margin-bottom: 1rem; }
+.form-section .step-num {
+  display: inline-grid;
+  place-items: center;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--emerald-700);
+  color: #fff;
+  font-weight: 700;
+  font-size: .82rem;
+  margin-right: .55rem;
+}
+.form-section h2 {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  margin: 0;
+  color: var(--emerald-900);
+}
+.form-section .section-desc {
+  margin: .35rem 0 0;
+  font-size: .88rem;
+  color: var(--ink-500);
+  padding-left: calc(28px + .55rem);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.form-row:last-child { margin-bottom: 0; }
+
+.form-field { display: flex; flex-direction: column; gap: .35rem; }
+.form-field label {
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--ink-700);
+}
+.form-field label .req { color: #c0392b; margin-left: 2px; }
+.form-field .hint {
+  font-size: .76rem;
+  color: var(--ink-500);
+}
+
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field input[type="tel"],
+.form-field input[type="number"],
+.form-field input[type="date"],
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 16px;            /* prevent iOS Safari auto-zoom on focus */
+  color: var(--ink-900);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: .75rem .9rem;
+  min-height: var(--tap-target);
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.form-field textarea {
+  resize: vertical;
+  min-height: 96px;
+  line-height: 1.5;
+}
+.form-field select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23047857' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right .85rem center;
+  background-size: 16px;
+  padding-right: 2.4rem;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder { color: var(--ink-300); }
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--emerald-500);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+  background: #fff;
+}
+
+/* Invalid state (after submit attempt) */
+.form-field input:user-invalid,
+.form-field select:user-invalid,
+.form-field textarea:user-invalid {
+  border-color: #e08585;
+  background: #fff8f7;
+}
+
+/* Radio pills (Jenis Kelamin / Jenjang) */
+.choice-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.choice {
+  position: relative;
+  cursor: pointer;
+}
+.choice input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+}
+.choice span {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-target);
+  padding: .65rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--ink-700);
+  transition: all .2s ease;
+}
+.choice input:checked + span {
+  background: var(--emerald-700);
+  border-color: var(--emerald-700);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(4, 120, 87, 0.25);
+}
+.choice input:focus-visible + span {
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.18);
+}
+
+/* File upload (KK, akta) */
+.file-drop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  padding: 1.1rem;
+  border: 1.5px dashed var(--emerald-100);
+  border-radius: 14px;
+  background: var(--bg-soft);
+  color: var(--ink-700);
+  font-size: .9rem;
+  text-align: center;
+  cursor: pointer;
+  min-height: 88px;
+  transition: border-color .2s ease, background .2s ease;
+}
+.file-drop:hover,
+.file-drop.dragover {
+  border-color: var(--emerald-500);
+  background: var(--emerald-50);
+}
+.file-drop svg {
+  width: 28px;
+  height: 28px;
+  color: var(--emerald-700);
+}
+.file-drop strong { color: var(--emerald-800); font-weight: 600; }
+.file-drop .file-hint { font-size: .76rem; color: var(--ink-500); }
+.file-drop input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.file-list {
+  list-style: none;
+  margin: .65rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: .4rem;
+}
+.file-list li {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .55rem .75rem;
+  background: var(--emerald-50);
+  border: 1px solid var(--emerald-100);
+  border-radius: 10px;
+  font-size: .85rem;
+  color: var(--ink-700);
+}
+.file-list li .file-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.file-list li button {
+  background: none;
+  border: none;
+  color: var(--ink-500);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  min-width: 32px;
+  min-height: 32px;
+}
+.file-list li button:hover { color: #c0392b; }
+
+/* Checkbox (persetujuan) */
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: .65rem;
+  padding: .85rem 1rem;
+  background: var(--emerald-50);
+  border: 1px solid var(--emerald-100);
+  border-radius: 12px;
+  cursor: pointer;
+}
+.check input {
+  margin-top: .15rem;
+  width: 20px; height: 20px;
+  accent-color: var(--emerald-700);
+  flex-shrink: 0;
+}
+.check span {
+  font-size: .88rem;
+  color: var(--ink-700);
+  line-height: 1.5;
+}
+
+/* Form actions */
+.form-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  justify-content: flex-end;
+}
+.form-actions .btn { min-width: 160px; }
+
+/* Sidebar info card */
+.info-aside {
+  background: linear-gradient(160deg, var(--emerald-700), var(--emerald-900));
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+.info-aside::before {
+  content: "";
+  position: absolute;
+  top: -50px; right: -50px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, var(--gold-300), transparent 70%);
+  opacity: .3;
+}
+.info-aside h3 {
+  color: var(--gold-300);
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: .75rem;
+}
+.info-aside p {
+  color: rgba(255,255,255,0.88);
+  font-size: .92rem;
+}
+.info-aside .info-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: .65rem;
+}
+.info-aside .info-list li {
+  display: flex;
+  gap: .55rem;
+  font-size: .88rem;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.5;
+}
+.info-aside .info-list svg {
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  color: var(--gold-300);
+  margin-top: 2px;
+}
+
+/* Success message */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.form-success.show { display: block; }
+.form-success .check-circle {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--emerald-50);
+  color: var(--emerald-700);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 1rem;
+}
+.form-success h2 { color: var(--emerald-800); }
+.form-success p  { color: var(--ink-500); max-width: 40ch; margin: 0 auto 1.25rem; }
+
+/* When form has been submitted, hide page hero + sidebar info so the
+   success message stands alone and feels like a real completion screen. */
+body.form-submitted .page-hero,
+body.form-submitted .info-aside { display: none; }
+body.form-submitted .form-grid  { grid-template-columns: 1fr; }
+body.form-submitted .form-shell { padding-top: 3rem; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 640px) {
+  .page-hero { padding: 1.5rem 0 1.25rem; }
+  .form-shell { padding: 1.75rem 0 2.5rem; }
+  .form-card { padding: 1.1rem; border-radius: 18px; }
+  .form-section + .form-section { margin-top: 1.25rem; padding-top: 1.25rem; }
+  .form-section h2 { font-size: 1rem; }
+  .form-section .section-desc { font-size: .82rem; padding-left: 0; }
+  .form-actions { flex-direction: column; }
+  .form-actions .btn { width: 100%; min-width: 0; }
+  .info-aside { padding: 1.25rem; border-radius: 18px; }
+}
+
+@media (min-width: 640px) {
+  .form-row.cols-2 { grid-template-columns: 1fr 1fr; }
+  .form-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+@media (min-width: 860px) {
+  .form-grid { grid-template-columns: 1.55fr .85fr; gap: 2rem; }
+  .form-card { padding: 2.25rem; }
+  .info-aside { position: sticky; top: 90px; }
+}

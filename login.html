@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0F4C3A" />
+  <meta name="description" content="Masuk ke ALIF SMART dengan akun Google — platform digital LPQ Alif Lam Mim." />
+  <meta name="robots" content="noindex" />
+
+  <title>Masuk &mdash; ALIF SMART</title>
+
+  <link rel="icon" type="image/png" href="assets/img/logo_alif_lam_mim.png" />
+  <link rel="apple-touch-icon" href="assets/img/logo_alif_lam_mim.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Amiri:wght@700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/app.css" />
+  <link rel="stylesheet" href="css/pages/login.css" />
+</head>
+<body class="app-body">
+
+  <main class="login">
+    <section class="login-hero">
+      <svg class="login-ornament" aria-hidden="true" viewBox="0 0 420 420">
+        <g fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M210 30 L250 170 L390 210 L250 250 L210 390 L170 250 L30 210 L170 170 Z"/>
+          <path d="M210 80 L237 183 L340 210 L237 237 L210 340 L183 237 L80 210 L183 183 Z"/>
+          <rect x="120" y="120" width="180" height="180" transform="rotate(45 210 210)"/>
+          <rect x="120" y="120" width="180" height="180"/>
+          <circle cx="210" cy="210" r="150"/>
+        </g>
+      </svg>
+      <a href="index.html" class="login-mark" aria-label="Kembali ke beranda ALIF SMART">
+        <span lang="ar">ألم</span>
+      </a>
+      <p class="login-eyebrow">LPQ Alif Lam Mim</p>
+      <h1>Alif Smart</h1>
+      <p class="login-lead">Absensi, hafalan, Iqro dan SPP santri TKQ, TPQ dan MDTA dalam satu aplikasi.</p>
+    </section>
+
+    <section class="login-card" aria-labelledby="loginTitle">
+      <h2 id="loginTitle">Assalamu’alaikum</h2>
+      <p class="muted">Masuk memakai akun Google Anda. Akun baru akan diperiksa admin LPQ sebelum bisa melihat data.</p>
+
+      <div id="authMsg" class="alert" role="status" aria-live="polite"></div>
+
+      <button type="button" id="btnGoogle" class="btn-google">
+        <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.6 5.4 2.6 13.2l7.9 6.2C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.4 5.8c4.3-4 6.9-9.9 6.9-17.2z"/><path fill="#FBBC05" d="M10.5 28.6c-.5-1.4-.8-3-.8-4.6s.3-3.2.8-4.6l-7.9-6.2C.9 16.5 0 20.1 0 24s.9 7.5 2.6 10.8l7.9-6.2z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.4-5.8c-2.1 1.4-4.8 2.3-8.5 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.2C6.6 42.6 14.6 48 24 48z"/></svg>
+        <span>Masuk dengan Google</span>
+      </button>
+
+      <div class="divider"><span>satu akun, peran sesuai tugas</span></div>
+
+      <ul class="role-tiles">
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 7l10-4 10 4-10 4z"/><path d="M6 9v5c0 1.7 2.7 3 6 3s6-1.3 6-3V9"/></svg>
+          Guru
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15 20c0-2 1-3.6 3-4.3"/></svg>
+          Wali santri
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M21 20H3"/></svg>
+          Komite
+        </li>
+      </ul>
+
+      <details class="email-login">
+        <summary>Tidak punya akun Google? Masuk dengan email</summary>
+        <form id="formMagic" novalidate>
+          <label for="emailMagic">Email</label>
+          <input type="email" id="emailMagic" name="email" placeholder="nama@email.com" autocomplete="email" required />
+          <button type="submit" class="btn-outline">Kirim link masuk ke email</button>
+        </form>
+        <form id="formPassword" novalidate>
+          <p class="muted small">Admin dengan password:</p>
+          <label for="emailPwd">Email</label>
+          <input type="email" id="emailPwd" name="email" autocomplete="email" required />
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" required minlength="6" />
+          <button type="submit" class="btn-outline">Masuk</button>
+        </form>
+      </details>
+    </section>
+
+    <footer class="login-foot">
+      <a href="pendaftaran-santri.html" class="btn-gold">Daftarkan santri baru</a>
+      <p class="muted small">Kami tidak menyimpan password Google Anda. <a href="dashboard.html?demo">Coba versi contoh</a></p>
+    </footer>
+  </main>
+
+  <script src="js/supabase-config.js" onerror="window._noSupabaseConfig=true"></script>
+  <script type="module" src="js/login.js"></script>
+</body>
+</html>
