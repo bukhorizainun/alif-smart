@@ -1,5 +1,8 @@
 # Setup Supabase + Login Google
 
+Situs live: <https://bukhorizainun.github.io/alif-smart/> (GitHub Pages, branch `main`).
+Setiap `git push` ke `main` otomatis memperbarui situs dalam ±1 menit.
+
 Project Supabase dan `js/supabase-config.js` sudah ada. Tinggal empat langkah.
 
 ## Langkah 1 — Database (sekali jalan)
@@ -30,8 +33,8 @@ jalankan, lalu kembalikan tanda `--` dan jalankan ulang seluruh file.
 3. **APIs & Services → Credentials → Create credentials → OAuth client ID**
    - Application type: **Web application**
    - Authorized JavaScript origins:
-     - `http://localhost:8765`
-     - domain produksi nanti, misalnya `https://alifsmart.id`
+     - `https://bukhorizainun.github.io`  (situs live)
+     - `http://localhost:8765`  (uji lokal)
    - Authorized redirect URIs:
      - `https://bnvmkybkpgcsskhlzkgc.supabase.co/auth/v1/callback`
        (salin persis dari halaman provider Google di Supabase, langkah 3)
@@ -42,13 +45,13 @@ jalankan, lalu kembalikan tanda `--` dan jalankan ulang seluruh file.
 1. **Authentication → Sign In / Providers → Google** → Enable.
 2. Tempel Client ID dan Client secret → **Save**.
 3. **Authentication → URL Configuration**
-   - Site URL: `http://localhost:8765` (ganti ke domain produksi saat online)
-   - Redirect URLs: tambahkan `http://localhost:8765/**` dan nanti `https://DOMAIN-ANDA/**`
+   - Site URL: `https://bukhorizainun.github.io/alif-smart/`
+   - Redirect URLs: tambahkan `https://bukhorizainun.github.io/alif-smart/**` dan `http://localhost:8765/**`
 
 ## Langkah 4 — Jadikan diri Anda admin
 
-1. Jalankan situs lokal: `python -m http.server 8765` di folder project.
-2. Buka <http://localhost:8765/login.html> → **Masuk dengan Google**.
+1. Buka <https://bukhorizainun.github.io/alif-smart/login.html> → **Masuk dengan Google**.
+2. (Uji lokal juga bisa: `python -m http.server 8765` lalu buka localhost.)
    Anda akan melihat layar *Akun menunggu persetujuan*. Itu benar.
 3. Supabase → SQL Editor:
 
