@@ -26,6 +26,13 @@
 /* ---------- top bar ---------- */
 .topbar { display: flex; align-items: center; gap: 12px; padding: calc(18px + env(safe-area-inset-top)) 16px 10px; }
 .topbar-who { flex: 1; min-width: 0; }
+.brand-mark {
+  width: 46px; height: 46px; flex: none; padding: 5px; border-radius: 14px;
+  background: #fff; object-fit: contain;
+  box-shadow: 0 1px 2px rgba(15, 40, 60, .08), 0 0 0 1px rgba(15, 40, 60, .06);
+}
+.topbar-avatar { display: inline-flex; flex: none; }
+@media (max-width: 370px) { .topbar-avatar { display: none; } }
 .topbar h1 { font-size: 1.15rem; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .role-pill {
   display: inline-flex; align-items: center; gap: 6px;

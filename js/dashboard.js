@@ -107,8 +107,8 @@ function renderShell() {
   if (!S.tab || !tabs.some((t) => t[0] === S.tab)) S.tab = tabs.length ? tabs[0][0] : null;
 
   const avatar = u.avatar_url
-    ? `<img src="${esc(u.avatar_url)}" alt="" class="avatar" referrerpolicy="no-referrer">`
-    : `<span class="avatar" aria-hidden="true">${esc(initials(u.full_name))}</span>`;
+    ? `<img src="${esc(u.avatar_url)}" alt="" class="avatar xs" referrerpolicy="no-referrer">`
+    : `<span class="avatar xs" aria-hidden="true">${esc(initials(u.full_name))}</span>`;
 
   const demoBar = S.demo ? `
     <div class="demo-bar" role="group" aria-label="Pilih peran contoh">
@@ -121,12 +121,13 @@ function renderShell() {
   root.innerHTML = `
     ${demoBar}
     <header class="topbar">
-      ${avatar}
+      <img src="assets/img/logo-emblem.png" alt="LPQ Alif Lam Mim" class="brand-mark" width="46" height="46">
       <div class="topbar-who">
         <p class="muted small">${esc(tglPanjang())}</p>
         <h1>${esc(u.full_name || u.email)}</h1>
       </div>
       ${u.status === 'aktif' ? `<span class="role-pill">${esc(ROLE_LABEL[role] || role)}</span>` : ''}
+      <span class="topbar-avatar">${avatar}</span>
       <button type="button" class="icon-btn" data-act="logout" aria-label="Keluar">${icon('logout', 20)}</button>
     </header>
     <main id="view" class="view" tabindex="-1"></main>
