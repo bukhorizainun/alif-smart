@@ -36,7 +36,7 @@ jalankan, lalu kembalikan tanda `--` dan jalankan ulang seluruh file.
      - `https://bukhorizainun.github.io`  (situs live)
      - `http://localhost:8765`  (uji lokal)
    - Authorized redirect URIs:
-     - `https://bnvmkybkpgcsskhlzkgc.supabase.co/auth/v1/callback`
+     - `https://poyddjpyrziegrpjxaqi.supabase.co/auth/v1/callback`
        (salin persis dari halaman provider Google di Supabase, langkah 3)
 4. Simpan **Client ID** dan **Client secret**. Jangan kirim secret ke chat atau repo.
 

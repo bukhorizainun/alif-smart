@@ -1,9 +1,9 @@
 /* ============================================
    ALIF SMART — Supabase config
-   File ini gitignored — jangan commit.
+   Publishable key memang publik (dilindungi RLS).
    ============================================ */
 
 window.SUPABASE_CONFIG = {
-  url: "https://bnvmkybkpgcsskhlzkgc.supabase.co",
-  anonKey: "sb_publishable_eiRV-khzJUYt5bfYqNkCjA_pqAPu-ym",
+  url: "https://poyddjpyrziegrpjxaqi.supabase.co",
+  anonKey: "sb_publishable_neOyYevYijHhYx-2IvOoiQ_3iRECr5z",
 };
