@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0F4C3A" />
+  <meta name="description" content="Kebijakan privasi ALIF SMART, platform digital LPQ Alif Lam Mim." />
+  <title>Kebijakan Privasi &mdash; ALIF SMART</title>
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <style>
+    body { margin: 0; font-family: var(--font); color: var(--ink-700); background: var(--bg-soft); line-height: 1.7; }
+    main { max-width: 720px; margin: 0 auto; padding: 48px 20px 64px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--emerald-900); font-weight: 700; margin-bottom: 32px; }
+    h1 { color: var(--ink-900); font-size: 1.9rem; line-height: 1.25; margin: 0 0 4px; }
+    h2 { color: var(--emerald-800); font-size: 1.1rem; margin: 32px 0 8px; }
+    .meta { color: var(--ink-500); font-size: .9rem; margin: 0 0 24px; }
+    ul { padding-left: 1.2rem; }
+    a { color: var(--emerald-700); }
+    footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); font-size: .9rem; color: var(--ink-500); }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo-emblem.png" alt="" width="40" height="40" />
+      ALIF SMART
+    </a>
+
+    <h1>Kebijakan Privasi</h1>
+    <p class="meta">Berlaku sejak 19 November 2026</p>
+
+    <p>ALIF SMART adalah aplikasi web milik LPQ Alif Lam Mim untuk mengelola kegiatan belajar santri:
+      pendaftaran, kehadiran, progres Iqro dan hafalan, pengumuman, serta SPP. Halaman ini menjelaskan
+      data apa yang kami simpan, untuk apa, dan siapa yang bisa melihatnya.</p>
+
+    <h2>Data dari akun Google</h2>
+    <p>Saat Anda masuk dengan Google, kami hanya menerima nama, alamat email, dan foto profil Anda
+      (cakupan <code>openid</code>, <code>email</code>, <code>profile</code>). Kami tidak membaca email,
+      kontak, berkas, atau data Google lain milik Anda.</p>
+
+    <h2>Data yang kami simpan</h2>
+    <ul>
+      <li>Profil akun: nama, email, peran (admin, guru, wali santri, komite), dan status persetujuan.</li>
+      <li>Data santri dari formulir pendaftaran, termasuk data wali dan berkas yang diunggah.</li>
+      <li>Catatan belajar: kehadiran, progres Iqro, dan hafalan.</li>
+      <li>Tagihan SPP dan bukti transfer yang diunggah wali.</li>
+    </ul>
+
+    <h2>Untuk apa data dipakai</h2>
+    <p>Data hanya dipakai untuk menjalankan kegiatan LPQ: mengelola kelas, mencatat perkembangan santri,
+      memberi kabar kepada wali, dan mengelola pembayaran. Kami tidak menjual data dan tidak memakainya
+      untuk iklan.</p>
+
+    <h2>Siapa yang bisa melihat</h2>
+    <ul>
+      <li>Akun baru tidak bisa melihat data apa pun sampai disetujui pengurus.</li>
+      <li>Guru melihat data santri di kelas yang ia ajar.</li>
+      <li>Wali santri hanya melihat data anaknya sendiri.</li>
+      <li>Komite hanya melihat angka gabungan, tanpa nama santri.</li>
+      <li>Admin (pengurus LPQ) mengelola seluruh data.</li>
+    </ul>
+
+    <h2>Penyimpanan</h2>
+    <p>Data disimpan di layanan basis data Supabase. Akses dibatasi per peran dengan aturan keamanan
+      di tingkat basis data (row level security).</p>
+
+    <h2>Hak Anda</h2>
+    <p>Anda dapat meminta salinan, perbaikan, atau penghapusan data Anda dan data anak Anda dengan
+      menghubungi pengurus LPQ Alif Lam Mim secara langsung.</p>
+
+    <footer>&copy; <span id="year">2026</span> LPQ Alif Lam Mim &middot; <a href="index.html">Beranda</a></footer>
+  </main>
+</body>
+</html>
